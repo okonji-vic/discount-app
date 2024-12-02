@@ -48,7 +48,7 @@ function Assignment2() {
     <Navigation/>
     <div>
       <Grid />
-      <Grid2 numRows={3} numCols={4} />
+      <Grid2 numRows={2} numCols={4} />
 
     </div>
   </section>

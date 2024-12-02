@@ -5,10 +5,10 @@ function Grid2({ numRows, numCols }) {
           display: "grid",
           gridTemplateRows: `repeat(${numRows}, 1fr)`,
           gridTemplateColumns: `repeat(${numCols}, 1fr)`,
-          gap: "10px", // Optional: adds spacing between grid items
+          gap: "5vw", // Optional: adds spacing between grid items
           backgroundColor: "lightgray",
           marginTop: "20px",
-            padding: "10px",
+            padding: "5vw",
             width: "80vw",
             borderRadius: "10px",
         }} 
@@ -22,6 +22,8 @@ function Grid2({ numRows, numCols }) {
               padding: "10px",
               textAlign: "center",
               borderRadius: "5px",
+              width: "10vw",
+              height: "10vw",
             }}
           >
             {index + 1}
