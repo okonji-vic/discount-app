@@ -26,7 +26,7 @@ const RatingDisplay = ({reviews}) => {
 //   ];
 
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", margin: "20px", textAlign: "center" }}>
+    <div style={{ fontFamily: "Arial, sans-serif", margin: "0px", textAlign: "center", border: '3px solid ', width: '90vw',}}>
       {reviews.map((review, index) => (
         <div className="container" key={review.title}>
           <h2 style={{ margin: "0 0 10px" }}>{review.title}</h2>

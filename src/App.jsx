@@ -8,7 +8,7 @@ import ToggleButton from './practice'
 import RatingDisplay2 from './rating2'
 import Grid from './grid'
 import { NavLink, Routes , Route } from 'react-router-dom'
-
+import Grid2 from './grid2'
 
 function App() {
   
@@ -48,6 +48,8 @@ function Assignment2() {
     <Navigation/>
     <div>
       <Grid />
+      <Grid2 numRows={3} numCols={4} />
+
     </div>
   </section>
   )
