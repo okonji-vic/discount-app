@@ -9,7 +9,7 @@ const Grid = () => {
             gap: "3vw",
             padding: "1rem",
             border: "10px solid white",
-            width: "49vw",
+            width: "59vw",
             height: "auto",
             backgroundColor: "white",
             borderRadius: "10px",
