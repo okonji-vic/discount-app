@@ -27,9 +27,8 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
-  width: auto;
-  border: px solid white;
+  box-sizing: border-box;
+  border: 3px solid white;
   
 }
 

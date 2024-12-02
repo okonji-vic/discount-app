@@ -14,7 +14,7 @@ const RatingDisplay2 = () => {
     
   
     return (
-      <div style={{ fontFamily: "Arial, sans-serif", margin: "0px", textAlign: "center", border: '3px solid ', width: '90vw' }}>
+      <div style={{ fontFamily: "Arial, sans-serif", margin: "0px", textAlign: "center", border: '3px solid ', width: '86vw' }}>
         {reviews.map((review, index) => (
           <div
             className="container"
@@ -24,7 +24,7 @@ const RatingDisplay2 = () => {
               marginBottom: "20px",
               padding: "15px",
               borderRadius: "5px",
-              width: "300px",
+              width: "70vw",
               margin: "10px auto",
               
             }}
