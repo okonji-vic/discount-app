@@ -1,7 +1,7 @@
 import React from "react";
 
 const Grid = () => {
-    const empty = ["1", "", "", "", "", "", "", ""];
+    const empty = ["", "", "", "", "", "", "", ""];
   return (
     <div style={{
         display: "grid",
