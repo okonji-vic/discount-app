@@ -19,12 +19,12 @@ function Product() {
     const numericPrice = parseFloat(price);
     const numericDiscount = parseFloat(discount);
 
-    if (isNaN(numericPrice) || isNaN(numericDiscount)) {
-      console.log("Please enter valid numbers for price and discount.");
-      setDiscountedPrice(null);
-      setNotDiscountedPrice("Please enter a number.");
-      return;
-    }
+    // if (isNaN(numericPrice) || isNaN(numericDiscount)) {
+    //   console.log("Please enter valid numbers for price and discount.");
+    //   setDiscountedPrice(null);
+    //   setNotDiscountedPrice("Please enter a number.");
+    //   return;
+    // }
 
     const calculatedPrice =
       numericPrice - (numericPrice * numericDiscount) / 100;
@@ -33,7 +33,21 @@ function Product() {
       console.log("Discounted price cannot be negative.");
       setDiscountedPrice(null);
       setNotDiscountedPrice("price cannot be negative");
-    } else {
+      return;
+    }
+    else if (isNaN(numericPrice)) {
+      console.log("Please enter a valid price and discount.");
+      setDiscountedPrice(null);
+      setNotDiscountedPrice("Please enter a valid price");
+      return;
+    }
+    else if (isNaN(numericDiscount)) {
+      console.log("Please enter a valid price and discount.");
+      setDiscountedPrice(null);
+      setNotDiscountedPrice("Please enter a valid discount");
+      return;
+    }
+    else {
       console.log(`Discounted price is $${calculatedPrice.toFixed(2)}`);
       setDiscountedPrice(calculatedPrice.toFixed(2));
       setNotDiscountedPrice(null);
