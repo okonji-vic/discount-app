@@ -29,8 +29,8 @@ const RatingDisplay2 = () => {
               
             }}
           >
-            <h2 style={{ margin: "0 0 10px" }}>{review.title}</h2>
-            <p style={{ fontSize: "16px", margin: "10px 0" }}>Rating: {review.rating} / 5</p>
+            <h2 style={{ margin: "0 0 10px", fontSize: '5vw' }}>{review.title}</h2>
+            <p style={{ fontSize: "3vw", margin: "10px 0" }}>Rating: {review.rating} / 5</p>
             <div style={{ display: "flex", justifyContent: "center", gap: "5px" }}>
               {/* Render filled stars */}
               {Array.from({ length: review.rating }).map((_, index) => (
@@ -38,7 +38,7 @@ const RatingDisplay2 = () => {
                   key={index}
                   src="https://sandpack-bundler.vercel.app/img/gold-star.svg"
                   alt="Filled Star"
-                  style={{ width: "20px", height: "20px" }}
+                  style={{ width: "4vw", height: "7vw" }}
                 />
               ))}
   

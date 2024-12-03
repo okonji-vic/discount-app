@@ -2,6 +2,8 @@ import React from "react";
 import "./rating.css";
 
 const RatingDisplay = ({reviews}) => {
+
+  
 //   const reviews = [
 //     {
 //       title: "Winter's Orbit",
@@ -29,9 +31,9 @@ const RatingDisplay = ({reviews}) => {
     <div style={{ fontFamily: "Arial, sans-serif", margin: "0px", textAlign: "center", border: '0px solid ', width: '86vw',}}>
       {reviews.map((review, index) => (
         <div className="container" key={review.title}>
-          <h2 style={{ margin: "0 0 10px" }}>{review.title}</h2>
-          <p style={{ fontSize: "16px", margin: "10px 0" }}>Rating: {review.rating} / 5</p>
-          <p style={{ fontSize: "20px", color: "gold", margin: "0" }}>
+          <h2 style={{ margin: "0 0 10px", fontSize: '5vw' }}>{review.title}</h2>
+          <p style={{ fontSize: "3vw", margin: "10px 0" }}>Rating: {review.rating} / 5</p>
+          <p style={{ fontSize: "4vw", color: "gold", margin: "0" }}>
             {"★".repeat(review.rating)}
             {/* {"☆".repeat(5 - review.rating)} */}
           </p>
@@ -44,3 +46,21 @@ const RatingDisplay = ({reviews}) => {
 };
 
 export default RatingDisplay;
+
+
+function Example() {
+
+// state
+
+
+return (
+  <div className="" >
+       <div>
+          <h1>Rating</h1>
+          <RatingDisplay reviews={['hello', 'hi', 'welcome' ]} />
+       </div>
+        <div></div>
+  </div>
+  
+)
+}
