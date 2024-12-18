@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Discount() {
   return (
     <div className="App">
         <h1>Discount Calculator</h1>
       <Product />
+      <App3 />
     </div>
   );
 }
@@ -14,6 +15,19 @@ function Product() {
   const [discount, setDiscount] = useState("");
   const [discountedPrice, setDiscountedPrice] = useState(null);
   const [notDiscountedPrice, setNotDiscountedPrice] = useState(null);
+  const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
+  const [currentDay, setCurrentDay] = useState(new Date().toDateString());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString());
+      setCurrentDay(new Date().toDateString());
+    }, 1000);
+    
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   const handleCalculate = () => {
     const numericPrice = parseFloat(price);
@@ -76,11 +90,53 @@ function Product() {
           />
         %
       </p>
-      <button onClick={handleCalculate}>Calculate Discount</button>
+      <button onClick={handleCalculate} style={{display: "block", textAlign: 'center', margin: '0 auto'}}>Calculate Discount</button>
       {discountedPrice !== null && <p>Discounted Price: ${discountedPrice}</p>}
       {notDiscountedPrice !== null && (
         <p style={{ color: "red", fontSize: "20px" }}>{notDiscountedPrice}</p>
       )}
+      <div style={{display: "inline", marginRight: '10px'}}>{currentDay}</div>
+      <span>{currentTime}</span>
+      
     </div>
   );
 }
+
+function App3() {
+  const inputRef = useRef(null)
+
+  const handleSubmit = () => {
+    alert(`Input Value: ${inputRef.current.value}`)
+  }
+
+  return (
+    <div>
+      <input type="text" ref={inputRef} />
+      <button onClick={handleSubmit}>Submit</button>
+      {inputRef.current && <p>{inputRef.current.value}</p>}
+    </div>
+  )
+}
+
+
+// function InputPage() {
+//   const [inputValue, setInputValue] = useState("");
+//   const [submittedValue, setSubmittedValue] = useState("");
+
+//   const handleSubmit = () => {
+//     setSubmittedValue(inputValue);
+//   };
+
+//   return (
+//     <div>
+//       <input
+//         type="text"
+//         value={inputValue}
+//         onChange={(e) => setInputValue(e.target.value)}
+//       />
+//       <button onClick={handleSubmit}>Submit</button>
+//       {submittedValue && <p>Submitted Value: {submittedValue}</p>}
+//     </div>
+//   );
+// }
+
